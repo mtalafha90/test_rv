@@ -543,7 +543,7 @@ def fitorb(rms_only=False):
         if dof > 0:
             chi2 = np.sum(result.fun**2)
             reduced_chi2 = chi2 / dof
-            print(f"Chi-squared: {chi2:.2e}, Reduced Chi-squared: {reduced_chi2:.2e}")
+            print(f"Chi-squared: {chi2:.2f}, Reduced Chi-squared: {reduced_chi2:.2f}")
 
             J = np.array([alleph(par, i)[1:] for i in range(n)])
             print(f"Jacobian shape: {J.shape}")
@@ -573,8 +573,8 @@ def fitorb(rms_only=False):
     normchi2 = [sd[j] / ndat[j] if ndat[j] > 0 else 0 for j in range(4)]
     wrms = [np.sqrt(sd[j] / wsum[j]) if wsum[j] > 0 else 0 for j in range(4)]
 
-    print(f"CHI2/N: {normchi2:.2e}")
-    print(f"RMS (Theta, rho, RV1, RV2): {wrms:.2e}")
+    print(f"CHI2/N: {normchi2:.2f}")
+    print(f"RMS (Theta, rho, RV1, RV2): {wrms:.2f}")
     print("\nFitted Parameters and Errors:")
     for i, idx in enumerate(selfit):
         print(f"{orb.elname[idx]:<5}: {orb.el[idx]:>10.4f} ± {orb.elerr[idx]:.4f}")

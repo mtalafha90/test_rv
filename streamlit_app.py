@@ -97,7 +97,7 @@ if (uploaded_file or selected_example) and run:
                 fitorb()
                 orbsave()
                 st.subheader("Process Output Log")
-                st.text(buffer.output)
+                #st.text(buffer.output)
                 st.subheader("Visual Orbit")
                 figs = orbplot_streamlit()
                 for fig in figs:

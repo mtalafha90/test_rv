@@ -543,7 +543,7 @@ def fitorb(rms_only=False):
         if dof > 0:
             chi2 = np.sum(result.fun**2)
             reduced_chi2 = chi2 / dof
-            print(f"Chi-squared: {chi2:.4f}, Reduced Chi-squared: {reduced_chi2:.4f}")
+            print(f"Chi-squared: {chi2.value}, Reduced Chi-squared: {reduced_chi2.value}")
 
             J = np.array([alleph(par, i)[1:] for i in range(n)])
             print(f"Jacobian shape: {J.shape}")
